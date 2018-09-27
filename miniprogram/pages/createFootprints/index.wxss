@@ -1,0 +1,52 @@
+/* pages/createFootprints/index.wxss */
+.container{
+  background-color: #fff;
+  padding-bottom: 80rpx;
+  font-size: 30rpx;
+}
+.item{
+  padding: 0 0 20rpx 0;
+}
+.item .title{
+  line-height: 80rpx;
+  color: #454545;
+  background-color: #eee;
+  padding: 0 20rpx;
+  margin-bottom: 20rpx;
+}
+.item textarea{
+  border: 1px solid #ccc;
+  margin-left: 20rpx;
+  padding-left: 20rpx;
+  padding-top: 10rpx;
+  font-size: 32rpx;
+}
+.item input{
+  border: 1px solid #ccc;
+  margin-left: 20rpx;
+  height: 80rpx;
+  width: 600rpx;
+  padding-left: 20rpx;
+}
+.upload-image{
+  margin-bottom: 30rpx;
+}
+.upload-image image{
+  width: 300rpx;
+  height: 300rpx;
+  margin-left: 20rpx;
+}
+.btn{
+  width: 100vw;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  background-color: #eee;
+  height: 90rpx;
+  padding-top: 20rpx;
+}
+.common-btn{
+  width: 90vw;
+  margin: 0 auto;
+
+}

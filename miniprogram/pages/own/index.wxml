@@ -1,0 +1,16 @@
+<view class="container">
+  <view class="userinfo row" >
+    <view wx:if="{{!logged}}">
+      <button 
+        open-type="getUserInfo" 
+        bindgetuserinfo="onGetUserInfo"
+        class="main-bg-color"
+      >登录</button>
+    </view>
+    <image wx:if="{{logged}}" src='{{userInfo.avatarUrl}}'></image>
+  </view>
+  <view class='userName'>{{userInfo.nickName}}</view>
+
+  <view class='login-out' wx:if="{{logged}}" bindtap='bindLoginOut'>退出登录</view>
+</view>
+

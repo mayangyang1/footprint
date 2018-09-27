@@ -1,0 +1,75 @@
+.container{
+  padding-top: 10rpx;
+  padding-bottom: 140rpx;
+}
+.card-content{
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.item-left-list{
+  width: 48vw;
+  margin: 1vw;
+}
+.item-left {
+  border-radius: 10rpx;
+  box-shadow: 5rpx 5rpx 3rpx #ccc;
+  overflow: hidden;
+  margin-bottom: 20rpx;
+  background-color: #fff;
+}
+.item-left .images{
+  width: 100%;
+  margin: 0 auto;
+}
+.item-left .item-content{
+  width: 90%;
+  margin: 0 auto;
+  font-size: 30rpx;
+  color: #454545;
+  margin-top: 30rpx;
+  flex-wrap: wrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3; 
+  -webkit-box-orient: vertical;
+}
+.operation{
+  width: 90%;
+  margin: 0 auto;
+  padding-bottom: 20rpx;
+  padding-top: 40rpx;
+}
+.operation image {
+  width: 40rpx;
+  height: 40rpx;
+}
+.item-rigth-list{
+  width: 48vw;
+  margin: 1vw;
+}
+.user-info .avatar{
+  border-radius: 50%;
+}
+.user-info .user-name{
+  width: 100rpx;
+}
+
+
+
+
+
+
+.btn{
+  width: 100vw;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  background-color: #eee;
+  height: 90rpx;
+}
+.common-btn{
+  width: 90vw;
+  margin: 0 auto;
+}

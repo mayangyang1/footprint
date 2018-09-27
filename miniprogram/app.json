@@ -1,0 +1,35 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/createFootprints/index",
+    "pages/own/index",
+    "pages/footprintsDetail/index"
+  ],
+  "window": {
+    "backgroundColor": "#F6F6F6",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#409eff",
+    "navigationBarTitleText": "足迹",
+    "navigationBarTextStyle": "#fff"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "足迹",
+        "selectedIconPath": "./images/footPrient-h.png",
+        "iconPath": "./images/footPrient-b.png"
+      },
+      {
+        "pagePath": "pages/own/index",
+        "text": "我",
+        "selectedIconPath": "./images/own-h.png",
+        "iconPath": "./images/own-b.png"
+      }
+    ],
+    "color": "#888888",
+    "selectedColor": "#409eff",
+    "backgroundColor": "#fafafa",
+    "borderStyle": "black"
+  }
+}

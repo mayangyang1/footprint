@@ -1,0 +1,48 @@
+<view class="container">
+  <view class='foot-print-header flex-sb pdlr20 pdt20'>
+    <view class='flex-fs user-message'>
+      <image src='{{dataObj.avatarUrl}}'></image>
+      <view class='mgl20 main-color'>{{dataObj.userName}}</view>
+    </view>
+    <view>发布时间:{{dataObj.createTime}}</view>
+  </view>
+  <view class='swiper'>
+    <image mode='widthFix' catchtap='bindSeeImage' data-id="{{dataObj.imageId}}" src="{{dataObj.imageId}}" class="slide-image"/>
+  </view>
+  <view class='content-text'>
+    {{dataObj.content}}
+  </view>
+  <view class='content-title' style='text-align: right; padding-right:30rpx;'>
+    — — {{dataObj.title}}
+  </view>
+  <view class='main-color pdlr20 text-overflow mgt20' style='width:350rpx;' data-longitude="{{dataObj.longitude}}" data-latitude="{{dataObj.latitude}}" bindtap='bindSeeAdress'>{{dataObj.addressName}}</view>
+  <view class='operation-list flex-fs'>
+    <view class='flex-fs mgr20'>
+      
+      <image  wx:if="{{dataObj.isFabulous}}" data-id='{{dataObj._id}}' catchtap='bindFalous' src='/images/zan-h.png'></image>
+      <image wx:else data-id='{{dataObj._id}}' bindtap='bindFalous' src='/images/zan-b.png'></image>
+      <view style='margin-left:10rpx;'>{{dataObj['fabulous'].length}}</view>
+    </view>
+    
+    <image class='mgr20' data-id="{{dataObj._id}}" bindtap='bindComment' src='/images/comment.png'></image>
+    <button open-type='share'  class='share-btn'>
+      <image class='mgr20' src='/images/share.png'></image>
+    </button>
+    
+  </view>
+  <view class='comments flex-fs mgl20 mgt20' wx:if="{{commentId === dataObj._id}}">
+    <input  focus='{{isComment}}' bindinput='bindCommentValue' value='{{commentValue}}' class='release-comment' placeholder='发表评论'></input> 
+    <view class='mgl20' data-id='{{dataObj._id}}' bindtap='bindRelease'>发表</view>
+  </view>
+  <view class='comment-list'>
+    <view class='comment-item' wx:key="{{dataObj._id}}" wx:for="{{dataObj.comment_item_list}}" >
+      <view class='flex-fs'>
+        <image class='headers' src='{{item.avatarUrl}}'></image>
+        <view class='nick-name mgl20'>{{item.userName}}</view>
+      </view>
+      <view class='comment-con mgt20'>{{item.theme_title}}</view>
+      <view class='comment-time'>{{item.create_time}}</view>
+    </view>
+  </view>
+  <view class='back-to' bindtap='bindReturnBack'><image src='/images/back.png'></image></view>
+</view>

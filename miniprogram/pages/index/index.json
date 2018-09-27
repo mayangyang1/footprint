@@ -1,0 +1,5 @@
+{
+  "navigationBarTitleText": "足迹",
+  "enablePullDownRefresh": true,
+  "onReachBottomDistance": 50
+}

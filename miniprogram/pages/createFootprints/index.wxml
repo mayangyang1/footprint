@@ -1,0 +1,19 @@
+<view class="container">
+  <view class='item'>
+    <view class='title'>文字描述</view>
+    <view class='content'><textarea placeholder='请输入文字' maxlength='500' bindinput='bindContent'></textarea></view>
+  </view>
+  <view class='item'>
+    <view class='title'>签名</view>
+    <view class='content'><input placeholder='不超过10个字' maxlength='10' bindinput='bindTitle'></input></view>
+  </view>
+  <view class='item'>
+    <view class='title'>上传图片</view>
+    <view class='upload-image flex-fs'>
+      <image bindtap='bindUploadImage' src="{{imageId}}"></image>
+    </view>
+  </view>
+  <view class='btn'>
+    <view class='common-btn main-color main-bg-color row' bindtap='getLocationWebsite'>创建</view>
+  </view>
+</view>

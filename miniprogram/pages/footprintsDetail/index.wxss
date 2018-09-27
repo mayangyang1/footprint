@@ -1,0 +1,82 @@
+/* pages/footprintsDetail/index.wxss */
+.container{
+  background-color: #fff;
+  padding-bottom: 50rpx;
+}
+.foot-print-header{
+  font-size: 32rpx;
+  color: #454545;
+  background-color: #fff;
+  line-height: 80rpx;
+}
+.user-message image{
+  width: 60rpx;
+  height: 60rpx;
+  border-radius: 50%;
+}
+.share-btn{
+  margin-left: 20rpx;
+  padding: 0;
+  width: 0rpx;
+  height: 0rpx;
+  font-size: 0rpx;
+  overflow: visible;
+  top: -20rpx;
+
+}
+.swiper{
+  
+}
+.slide-image{
+  width: 100vw;
+}
+.content-text{
+  font-size: 32rpx;
+  padding: 20rpx;
+}
+.operation-list{
+  background-color: #fff;
+  padding-top: 20rpx;
+  padding-left: 20rpx;
+}
+.operation-list image {
+  width: 50rpx;
+  height: 50rpx;
+}
+
+.comment-list{
+  padding: 20rpx;
+}
+.comment-item{
+  padding-bottom: 40rpx;
+  font-size: 30rpx;
+}
+.comment-item .headers{
+  width: 50rpx;
+  height: 50rpx;
+  border-radius: 50%;
+}
+.comment-item .nick-name{
+  font-size: 30rpx;
+  color: #409eff;
+}
+.comment-item .comment-time{
+  margin-top: 10rpx;
+}
+.comments input{
+  border: 1px solid #ccc;
+  width: 500rpx;
+  height: 70rpx;
+  line-height: 70rpx;
+  padding-left: 10rpx;
+}
+
+.back-to{
+  position: fixed;
+  bottom: 40rpx;
+  left: 20rpx;
+}
+.back-to image {
+  width: 80rpx;
+  height: 80rpx;
+}
