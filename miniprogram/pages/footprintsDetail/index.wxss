@@ -1,7 +1,7 @@
 /* pages/footprintsDetail/index.wxss */
 .container{
   background-color: #fff;
-  padding-bottom: 50rpx;
+  padding-bottom: 100rpx;
 }
 .foot-print-header{
   font-size: 32rpx;

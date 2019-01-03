@@ -7,7 +7,7 @@
     <view>发布时间:{{dataObj.createTime}}</view>
   </view>
   <view class='swiper'>
-    <image mode='widthFix' catchtap='bindSeeImage' data-id="{{dataObj.imageId}}" src="{{dataObj.imageId}}" class="slide-image"/>
+    <image mode='widthFix' lazy-load='true' catchtap='bindSeeImage' data-id="{{dataObj.imageId}}" src="{{dataObj.imageId}}" class="slide-image"/>
   </view>
   <view class='content-text'>
     {{dataObj.content}}

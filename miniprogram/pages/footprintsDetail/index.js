@@ -7,11 +7,6 @@ Page({
    * 页面的初始数据
    */
   data: {
-    imgUrls: [
-      'http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg',
-      'http://img06.tooopen.com/images/20160818/tooopen_sy_175866434296.jpg',
-      'http://img06.tooopen.com/images/20160818/tooopen_sy_175833047715.jpg'
-    ],
     dataObj: {},
     fabulousList: [],
     commentId:'',
@@ -53,7 +48,7 @@ Page({
     const nowData = utils.formatTime(new Date())
     const db = wx.cloud.database();
     wx.showLoading({
-      title: '发表中',
+      title: '发表...',
     })
     const _openid = wx.getStorageSync('openid');
     db.collection('user_info').where({
@@ -75,7 +70,7 @@ Page({
           },
           success(res) {
             that.data.dataObj.comment_item_list = res.result.data;
-            that.setData({ dataObj: that.data.dataObj, commentId: '', commentValue: '' })
+            that.setData({ dataObj: that.data.dataObj, commentId: '', commentValue: '' });
           },
           complete() {
             wx.hideLoading();

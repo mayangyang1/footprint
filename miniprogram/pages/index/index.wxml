@@ -3,12 +3,12 @@
   <view class='card-content'>
     <view class='item-left-list' >
       <block wx:for="{{recordList}}" wx:key="item._id" >
-        <view class='item-left' wx:if="{{index%2==0}}" data-id='{{item._id}}' bindtap='bindDetail' bindlongpress='' data-imageid="{{item.imageId}}" >
-          <image class='images' mode='widthFix' src='{{item.imageId}}'></image>
+        <view class='item-left' wx:if="{{index%2==0}}" data-id='{{item._id}}' bindtap='bindDetail' bindlongpress='bindDeleatItem' data-imageid="{{item.imageId}}" >
+          <image class='images' lazy-load='true' mode='widthFix' src='{{item.imageId}}'></image>
           <view class='item-content'>{{item.content}}</view>
           <view class='operation flex-sb'>
             <view class='flex-fs'>
-              <image mode='widthFix'  wx:if="{{fabulousList[index].isFabulous}}" data-id='{{item._id}}' catchtap='bindFalous' src='/images/zan-h.png'></image>
+              <image mode='widthFix'   wx:if="{{fabulousList[index].isFabulous}}" data-id='{{item._id}}' catchtap='bindFalous' src='/images/zan-h.png'></image>
               <image mode='widthFix'  wx:else data-id='{{item._id}}' catchtap='bindFalous'  src='/images/zan-b.png'></image>
               <view class='mgl20'>{{fabulousList[index]['fabulous'].length}}</view>
             </view>
@@ -22,8 +22,8 @@
     </view>
     <view class='item-rigth-list'>
       <block wx:for="{{recordList}}" wx:key="item._id" >
-        <view class='item-left' wx:if="{{index%2==1}}" data-id='{{item._id}}' bindtap='bindDetail'>
-          <image class='images' mode='widthFix' src='{{item.imageId}}'></image>
+        <view class='item-left' wx:if="{{index%2==1}}" data-id='{{item._id}}' bindtap='bindDetail' bindlongpress='bindDeleatItem' data-imageid="{{item.imageId}}">
+          <image class='images' lazy-load='true' mode='widthFix' src='{{item.imageId}}'></image>
           <view class='item-content'>{{item.content}}</view>
           <view class='operation flex-sb'>
             <view class='flex-fs'>

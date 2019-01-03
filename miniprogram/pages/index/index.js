@@ -112,6 +112,31 @@ Page({
     }
   
   },
+  getFlabulousNumList() {
+    const that = this;
+    const openId = wx.getStorageSync('openid');
+    wx.cloud.callFunction({
+      name: 'fabulous',
+      data: {
+        id: ''
+      },
+      success(res) {
+        const fabulousList = res.result.data;
+        fabulousList.forEach((v, i) => {
+          if (v.fabulous.includes(openId)) {
+            v.isFabulous = true;
+          } else {
+            v.isFabulous = false;
+          }
+          that.setData({ fabulousList: fabulousList })
+        })
+
+      },
+      complete() {
+       
+      }
+    })
+  },
   getuserRecordList() {
     const that = this;
     let page = this.data.page;
@@ -151,28 +176,7 @@ Page({
             that.setData({
               page: page
             })
-            const openId = wx.getStorageSync('openid');
-            wx.cloud.callFunction({
-              name: 'fabulous',
-              data: {
-                id: ''
-              },
-              success(res) {
-                const fabulousList = res.result.data;
-                fabulousList.forEach((v, i) => {
-                  if (v.fabulous.includes(openId)){
-                    v.isFabulous = true;
-                  }else{
-                    v.isFabulous = false;
-                  }
-                  that.setData({ fabulousList: fabulousList })
-                })
-                
-              },
-              complete() {
-                wx.hideLoading();
-              }
-            })
+           that.getFlabulousNumList();
           }
           
           wx.stopPullDownRefresh();
@@ -195,6 +199,7 @@ Page({
       }).orderBy('createTime', 'desc').limit(size).skip(10*page).get({
         success: res => {
           if (res.data.length) {
+            page++;
             that.data.recordList = that.data.recordList.concat(res.data);
             for (let _i = 0; _i < that.data.recordList.length; _i++) {
               db.collection('comment').orderBy('create_time', 'desc').get({
@@ -272,12 +277,12 @@ Page({
     }
   },
   onShow() {
-    this.setData({ recordList: [], page: 0 })
-    this.getuserRecordList();
-    
+    this.getFlabulousNumList();
   },
   onLoad: function() {
-    
+    this.data.recordList = [];
+    this.data.page = 0;
+    this.getuserRecordList();
   },
   onPullDownRefresh() {
     this.setData({ recordList: [], page:0 })
