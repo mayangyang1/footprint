@@ -10,7 +10,7 @@
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#409eff",
     "navigationBarTitleText": "足迹",
-    "navigationBarTextStyle": "#fff"
+    "navigationBarTextStyle": "white"
   },
   "tabBar": {
     "list": [
@@ -31,5 +31,6 @@
     "selectedColor": "#409eff",
     "backgroundColor": "#fafafa",
     "borderStyle": "black"
-  }
+  },
+  "sitemapLocation": "sitemap.json"
 }

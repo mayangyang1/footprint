@@ -12,5 +12,7 @@
   <view class='userName'>{{userInfo.nickName}}</view>
 
   <view class='login-out' wx:if="{{logged}}" bindtap='bindLoginOut'>退出登录</view>
+  <view style='border:1px solid #ccc;' bindtap='bindtaps'>上传</view>
+  <image src='{{img}}' mode="widthFix"></image>
 </view>
 

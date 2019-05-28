@@ -125,6 +125,11 @@ Page({
             mask: true
           })
           setTimeout(() => {
+            var pages = getCurrentPages();
+            let prePage = pages[pages.length-2];
+            prePage.data.recordList = [];
+            prePage.data.page = 0;
+            prePage.getuserRecordList();
             wx.navigateBack({
               delta: 1
             })

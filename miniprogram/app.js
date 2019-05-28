@@ -1,4 +1,5 @@
 const amapFile = require('./lib/amap-wx.js');
+const utils = require('./util/utils.js')
 var qqmapsdk;
 //app.js
 App({
@@ -18,6 +19,7 @@ App({
 
     this.qqmapsdk = qqmapsdk;
   },
+  postAjax: utils.postAjax,
   qqmapsdk: '',
   globalData: {}
 })

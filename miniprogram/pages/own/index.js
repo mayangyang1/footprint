@@ -1,5 +1,6 @@
 // pages/own/index.js
 const utils = require('../../util/utils.js');
+var api = require('../../util/ocr.js');
 const app = getApp();
 Page({
 
@@ -11,6 +12,7 @@ Page({
     logged: false,
     userInfo: {},
     oepnId: '',
+    img: ''
   },
   onGetUserInfo: function(e) {
     wx.showLoading({
@@ -93,7 +95,44 @@ Page({
     },1000)
    
   },
-
+  bindtaps() {
+    const that = this;
+    let timeStamp = parseInt((new Date().getTime() / 1000));
+    wx.chooseImage({
+      count: 1, // 默认9
+      //sizeType: ['original', 'compressed'],
+      sizeType: ["compressed"],
+      sourceType: ["album", "camera"],
+      success: function (res) {
+        var fs = wx.getFileSystemManager();
+        fs.readFile({
+          filePath: res.tempFilePaths[0].toString(),
+          encoding: 'base64',
+          success(result) {
+            //获取到图片的base64 进行请求接口
+            api.faceageRequest(result.data, {
+              success(result) {
+                var code = result.ret;
+                if (code == 0) {
+                  wx.hideLoading();
+                  that.setData({
+                    img: 'data:image/png;base64,' + result.data.frontimage
+                  })
+                } else {
+                  wx.hideLoading();
+                  wx.showModal({
+                    title: '错误提示',
+                    content: result.msg,
+                    showCancel: false
+                  })
+                }
+              }
+            })
+          }
+        })
+      }
+    });
+  },
   /**
    * 生命周期函数--监听页面加载
    */

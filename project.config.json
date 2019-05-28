@@ -11,6 +11,8 @@
 	"appid": "wx3b900be5bc843dd0",
 	"projectname": "cloudProgram",
 	"libVersion": "2.2.5",
+	"simulatorType": "wechat",
+	"simulatorPluginLibVersion": {},
 	"condition": {
 		"search": {
 			"current": -1,
